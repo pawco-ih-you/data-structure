@@ -55,14 +55,27 @@ describe('Stack', function () {
     })
   })
   describe('peek', function () {
-    it('returns the top elements of the stack')
-    it('if you call the peak() function on an empty array, you get undefined as the result')
+    it('returns the top elements of the stack', () => {
+      stack.push(1), stack.push(2)
+      expect(stack.peek()).toBe(2)
+    })
+    it('if you call the peak() function on an empty array, you get undefined as the result', () => {
+      expect(stack.peek()).toBe(undefined)
+    })
   })
   describe('length: when you need to know how many elements are stored in a stack', function () {
-    it('returns the length of a stack by returning the value of top')
+    it('returns the length of a stack by returning the value of top', () => {
+      const stack = new Stack([1, 2, 3])
+      expect(stack.length()).toBe(3)
+    })
   })
   describe('clear: we can clear a stack', function () {
-    it('the top variable back to 0')
+    it('the top variable back to 0', () => {
+      const stack = new Stack([1, 2, 3])
+      symbolAt(stack)
+      stack.clear()
+      expect(getStackSymbol('top')).toBe(0)
+    })
   })
 })
 
